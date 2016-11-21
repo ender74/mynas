@@ -1,0 +1,12 @@
+version: '2'
+services:
+    samba:
+        build: ./samba
+        image: mynas-smb
+        hostname: mynas-smb
+        command: ['-u user;1234;200', '-s public;/share;yes;no;no;all;user']
+        ports:
+            - "139:139"
+            - "445:445"
+        volumes:
+            - /media:/share
