@@ -9,4 +9,6 @@ services:
             - "139:139"
             - "445:445"
         volumes:
-            - /media:/share
+            - media:/share
+volumes:
+  media:
