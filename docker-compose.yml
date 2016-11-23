@@ -21,5 +21,6 @@ services:
             - "8200:8200"
         volumes:
             - media:/media
+        network_mode: "host"
 volumes:
   media:
