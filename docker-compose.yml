@@ -4,11 +4,22 @@ services:
         build: ./samba
         image: mynas-smb
         hostname: mynas-smb
-        command: ['-u user;1234;200', '-s public;/share;yes;no;no;all;user']
+        command: ['-u user;1234;200', '-s public;/media;yes;no;no;all;user']
         ports:
+            - "137:137/udp"
+            - "138:138/udp"
             - "139:139"
             - "445:445"
         volumes:
-            - media:/share
+            - media:/media
+    dlna:
+        build: ./dlna
+        image: mynas-dlna
+        hostname: mynas-dlna
+        ports:
+            - "1900:1900/udp"
+            - "8200:8200"
+        volumes:
+            - media:/media
 volumes:
   media:

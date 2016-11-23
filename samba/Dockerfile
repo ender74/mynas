@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:16.10
 MAINTAINER Heiko Hüter <ender@ender74.de>
 
 RUN apt-get update -y \
