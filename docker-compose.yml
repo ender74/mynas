@@ -22,5 +22,15 @@ services:
         volumes:
             - media:/media
         network_mode: "host"
+    imap:
+        build: ./imap
+        image: mynas-imap
+        hostname: mynas-imap
+        ports:
+            - "143:143"
+            - "993:993"
+        volumes:
+            - mails:/var/cache/Maildir
 volumes:
   media:
+  mails:
